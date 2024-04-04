@@ -1,11 +1,12 @@
-name: Reusable Workflow
+name: Github Actions Input Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   workflow_call:
+
 jobs:
-  build:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Run tests
-        run: npm test
+      - name: Print the input name to STDOUT
+        run: echo The username is ${{ inputs.username }}
+        shell: bash
